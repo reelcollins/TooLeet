@@ -76,11 +76,11 @@ ROOT_URLCONF = 'ToLet.urls'
 
 
 
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-    "http://localhost:19006",
+# CORS_ORIGIN_WHITELIST = [
+#     "http://localhost:3000",
+#     "http://localhost:19006",
     
-]
+# ]
 
 REST_FRAMEWORK = {
     "NON_FIELD_ERRORS_KEY":"errors",
