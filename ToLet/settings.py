@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 
 
+from datetime import timedelta
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,7 +42,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
     'TooLet',
+    'ToooLeeet',
+
+
+    'rest_framework',
+    'rest_framework.authtoken',
+    
+
 ]
 
 MIDDLEWARE = [
@@ -54,6 +65,56 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ToLet.urls'
+
+
+
+
+
+
+
+
+
+
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
+    "http://localhost:19006",
+    
+]
+
+REST_FRAMEWORK = {
+    "NON_FIELD_ERRORS_KEY":"errors",
+    "DEFAULT_AUTHENTICATION_CLASSES":(
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES":(
+        "rest_framework.permissions.IsAuthenticated"
+    )
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'SIGNING_KEY': SECRET_KEY,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+                          
+    # 'Bearer <Token>'
+                                        
+                                        
+}
+
+
+
+
+
+
+
+
+
+
+
 
 TEMPLATES = [
     {
