@@ -140,8 +140,12 @@ WSGI_APPLICATION = 'ToLet.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'pPD9VfdwqmxYbnIafz03',
+        'HOST': 'containers-us-west-64.railway.app',
+        'PORT': '7472',
     }
 }
 
